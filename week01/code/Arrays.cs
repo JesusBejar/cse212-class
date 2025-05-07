@@ -13,7 +13,14 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        // declare list (multiplesList)
+        List<double> multiplesList = new List<double>();
+
+        // make multipleOne then add to list
+        var m1 = number * length;
+        multiplesList.Add(m1);
+
+        return multiplesList; // replace this return statement with your own
     }
 
     /// <summary>
