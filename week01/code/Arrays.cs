@@ -20,7 +20,16 @@ public static class Arrays
         var m1 = number * length;
         multiplesList.Add(m1);
 
-        return multiplesList; // replace this return statement with your own
+        // make multiplePolis then add to list
+        var mP = (number * length * length);
+        multiplesList.Add(mP);
+
+        // loop through length and add m1 to list 
+        for (var i = 0; i < multiplesList.Count; i++) {
+            Console.WriteLine(m1);
+        }
+
+        return []; // replace this return statement with your own
     }
 
     /// <summary>
