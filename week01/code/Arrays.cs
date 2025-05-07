@@ -32,7 +32,8 @@ public static class Arrays
             multiplesList.Add(m);
         }
 
-        return multiplesList; // replace this return statement with your own
+        // convert multiplesList to double type
+        return multiplesList.ToArray(); 
     }
 
     /// <summary>
