@@ -13,23 +13,15 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        // declare a split num list
-        List<int> splitLength = new List<int>();
-
-        // make a split num function
-        for (int i = 1; i <= 0; i++)
-        {
-            splitLength.Add(i);
-        }
-        splitLength.Select(i => (double)i).ToArray();
-
         // declare list (multiplesList)
         List<double> multiplesList = new List<double>();
 
         // loop through length and add m1 to list 
-        for (var i = 0; i < splitLength.Count; i++) {
-            var m = number * length;
-            multiplesList.Add(m);
+        for (var i = 0; i < length; i++) {
+            // declare multiple 
+            double mul = number * i;
+            // add mul to list
+            multiplesList.Add(mul);
         }
 
         // convert multiplesList to double type
