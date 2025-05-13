@@ -44,7 +44,7 @@
         catch (IndexOutOfRangeException) {
             Console.WriteLine("I got the exception as expected.");
         }
-        // Defect(s) Found: 
+        // Defect(s) Found: zero
     }
 
     private readonly List<int> _queue = new();
@@ -54,7 +54,8 @@
     /// </summary>
     /// <param name="value">Integer value to add to the queue</param>
     private void Enqueue(int value) {
-        _queue.Insert(0, value);
+        // place value at end not at index 0
+        _queue.Add(value);
     }
 
     /// <summary>
