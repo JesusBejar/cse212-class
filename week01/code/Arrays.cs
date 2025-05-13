@@ -37,25 +37,21 @@ public static class Arrays
     /// </summary>
     public static void RotateListRight(List<int> data, int amount)
     {
-        // TODO Problem 2 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
-
-        // start with 5 as the amount then try it with 3
-
-        // if 5, move 5 places to the right (including the index) then wrap around after 9
-        // declare list (rotatedList)
-
-        // loop through data
-
-        // return rotatedList
-
-        // if 3, multiply amount by 2 and add index to then wrap around after 9
-        // declare list (rotatedList)
-
-        // loop through data
-
-        // return rotatedList
+        // Step 1: Get the elements that will move to the front (last 'amount' elements)
+        // For example, if amount is 3, we want the last 3 elements
+        List<int> elementsToMove = data.GetRange(data.Count - amount, amount);
+        
+        // Step 2: Get the elements that will move to the back (all elements except last 'amount' elements)
+        // For example, if amount is 3, we want all elements except the last 3
+        List<int> elementsToShift = data.GetRange(0, data.Count - amount);
+        
+        // Step 3: Clear the original list
+        data.Clear();
+        
+        // Step 4: Add the elements in the correct order:
+        // First add the elements that moved to the front
+        data.AddRange(elementsToMove);
+        // Then add the elements that moved to the back
+        data.AddRange(elementsToShift);
     }
 }
