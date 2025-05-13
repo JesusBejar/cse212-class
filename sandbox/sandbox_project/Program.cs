@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 public class Program
 {
@@ -9,5 +10,9 @@ public class Program
         // one of your projects.
 
         Console.WriteLine("Hello Sandbox World!");
-    }
+
+        var nums = new List<int> { 1, 2, 3};
+        Console.WriteLine(nums);
+
+    }    
 }
