@@ -40,8 +40,13 @@ public class TakingTurnsQueue
         else
         {
             Person person = _people.Dequeue();
-            // found defect, no infinite turns
-            if (person.Turns > 1)
+            // handles infinite turns
+            if (person.Turns <= 0) 
+            {
+                _people.Enqueue(person);
+            }
+            // handles finite turns
+            else if (person.Turns > 1)
             {
                 person.Turns -= 1;
                 _people.Enqueue(person);

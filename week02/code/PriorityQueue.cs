@@ -24,15 +24,15 @@
 
         // Find the index of the item with the highest priority to remove
         var highPriorityIndex = 0;
-        // found defect, was not checking the first index
-        for (int index = 1; index < _queue.Count - 1; index++)
+        for (int index = 1; index < _queue.Count; index++)
         {
-            if (_queue[index].Priority >= _queue[highPriorityIndex].Priority)
+            if (_queue[index].Priority > _queue[highPriorityIndex].Priority)
                 highPriorityIndex = index;
         }
 
-        // found another defect, remove and return the item with the highest priority
         var value = _queue[highPriorityIndex].Value;
+        // remove the item
+        _queue.RemoveAt(highPriorityIndex);
         return value;
     }
 

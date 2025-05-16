@@ -13,8 +13,8 @@ public class PersonQueue
     /// <param name="person">The person to add</param>
     public void Enqueue(Person person)
     {
-        // found defect, worked as a stack instead of a queue
-        _queue.Insert(0, person);
+        // add to the end
+        _queue.Add(person); 
 
     }
 
