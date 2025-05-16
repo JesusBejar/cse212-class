@@ -6,17 +6,27 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 public class PriorityQueueTests
 {
     [TestMethod]
-    // Scenario: 
-    // Expected Result: 
-    // Defect(s) Found: 
+    // Scenario: Enqueue items with different priorities and verify Dequeue returns the highest priority item.
+    // Expected Result: Dequeue returns items in order of highest priority.
+    // Defect(s) Found: None after fixes.
     public void TestPriorityQueue_1()
     {
+        // PriorityQueue is a unique class that prioritizes the "highest" item
         var priorityQueue = new PriorityQueue();
-        Assert.Fail("Implement the test case and then remove this.");
+        // PriorityQueue reads the num not the string
+        priorityQueue.Enqueue("Low", 1);
+        priorityQueue.Enqueue("High", 3);
+        priorityQueue.Enqueue("Medium", 2);
+
+        // Assert.AreEqual is used to verify that the actual result matches the expected result
+        // Assert.AreEqual("expected result", actual result)
+        Assert.AreEqual("High", priorityQueue.Dequeue());
+        Assert.AreEqual("Medium", priorityQueue.Dequeue());
+        Assert.AreEqual("Low", priorityQueue.Dequeue());
     }
 
     [TestMethod]
-    // Scenario: 
+    // Scenario:
     // Expected Result: 
     // Defect(s) Found: 
     public void TestPriorityQueue_2()
