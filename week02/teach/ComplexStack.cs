@@ -1,5 +1,7 @@
 ﻿public static class ComplexStack {
     public static bool DoSomethingComplicated(string line) {
+        // stack not a queue (LIFO)
+        // (), [], {}
         var stack = new Stack<char>();
         foreach (var item in line) {
             if (item is '(' or '[' or '{') {

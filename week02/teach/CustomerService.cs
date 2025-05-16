@@ -1,8 +1,16 @@
 ﻿/// <summary>
 /// Maintain a Customer Service Queue.  Allows new customers to be 
-/// added and allows customers to be serviced.
+/// added and allows customers to be serviced.  
+/// 
+///1. The user shall specify the maximum size of the Customer Service Queue when it is created. 
+/// If the size is invalid (less than or equal to 0) then the size shall default to 10.
+// 2. The AddNewCustomer method shall enqueue a new customer into the queue.
+// 3. If the queue is full when trying to add a customer, then an error message will be displayed.
+// 4. The ServeCustomer function shall dequeue the next customer from the queue and display the details.
+// 5. If the queue is empty when trying to serve a customer, then an error message will be displayed.
 /// </summary>
 public class CustomerService {
+
     public static void Run() {
         // Example code to see what's in the customer service queue:
         // var cs = new CustomerService(10);
@@ -11,17 +19,30 @@ public class CustomerService {
         // Test Cases
 
         // Test 1
-        // Scenario: 
-        // Expected Result: 
+        // Scenario: get the size of the queue from user
+        // Expected Result: assert the size of the queue is input or default to 10 if any answer <= 0
         Console.WriteLine("Test 1");
-
+        Console.WriteLine("What is the max size of the queue?");
+        var maxSize = int.Parse(Console.ReadLine()!);
+        // queue declaration right here
+        var customerServiceQueue = new CustomerService(maxSize);
+        // Assert.AreEqual(maxSize, customerServiceQueue._maxSize);
+        if (maxSize <= 0) {
+            if (customerServiceQueue._maxSize != 10) {
+                Console.WriteLine($"error: maxSize was {maxSize}, but queue._maxSize is {customerServiceQueue._maxSize}");
+            }
+        } else {
+            if (customerServiceQueue._maxSize != maxSize) {
+                Console.WriteLine($"error: maxSize was {maxSize}, but queue._maxSize is {customerServiceQueue._maxSize}");
+            }
+        }
         // Defect(s) Found: 
 
         Console.WriteLine("=================");
 
         // Test 2
-        // Scenario: 
-        // Expected Result: 
+        // Scenario: use AddNewCustomer to add a customer to the queue
+        // Expected Result: assert the customer is added to the queue
         Console.WriteLine("Test 2");
 
         // Defect(s) Found: 
