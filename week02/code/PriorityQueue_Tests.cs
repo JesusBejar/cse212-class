@@ -26,14 +26,22 @@ public class PriorityQueueTests
     }
 
     [TestMethod]
-    // Scenario:
-    // Expected Result: 
-    // Defect(s) Found: 
+    // Scenario: Enqueue items with the same priority and verify FIFO order.
+    // Expected Result: Dequeue returns items in the order they were enqueued if priorities are equal.
+    // Defect(s) Found: None after fixes.
     public void TestPriorityQueue_2()
     {
         var priorityQueue = new PriorityQueue();
-        Assert.Fail("Implement the test case and then remove this.");
+        // nums are the same, so it follows FIFO (first in first out order)
+        priorityQueue.Enqueue("First", 1);
+        priorityQueue.Enqueue("Second", 1);
+        priorityQueue.Enqueue("Third", 1);
+
+        Assert.AreEqual("First", priorityQueue.Dequeue());
+        Assert.AreEqual("Second", priorityQueue.Dequeue());
+        Assert.AreEqual("Third", priorityQueue.Dequeue());
     }
+
 
     // Add more test cases as needed below.
 }
