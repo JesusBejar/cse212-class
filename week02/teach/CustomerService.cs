@@ -44,6 +44,10 @@ public class CustomerService {
         // Scenario: use AddNewCustomer to add a customer to the queue
         // Expected Result: assert the customer is added to the queue
         Console.WriteLine("Test 2");
+        customerServiceQueue.AddNewCustomer();
+        if (customerServiceQueue._queue.Count != 1) {
+            Console.WriteLine($"error: queue._queue.Count is {customerServiceQueue._queue.Count}");
+        }
 
         // Defect(s) Found: 
 
