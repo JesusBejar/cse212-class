@@ -47,6 +47,8 @@ public class CustomerService {
         customerServiceQueue.AddNewCustomer();
         if (customerServiceQueue._queue.Count != 1) {
             Console.WriteLine($"error: queue._queue.Count is {customerServiceQueue._queue.Count}");
+        } else {
+            Console.WriteLine("error: customer not added to queue");
         }
 
         // Defect(s) Found: 
@@ -59,8 +61,22 @@ public class CustomerService {
         Console.WriteLine("Test 3");
         if (customerServiceQueue._queue.Count > customerServiceQueue._maxSize) {
             Console.WriteLine($"error: queue._queue.Count is {customerServiceQueue._queue.Count}");
+        } else {
+            Console.WriteLine("error: queue is not full");
         }
 
+        // Defect(s) Found: 
+
+        Console.WriteLine("=================");
+
+        // Test 4
+        // Scenario: ServeCustomer will dequeue the next customer from the queue
+        // Expected Result: assert the customer is dequeued 
+        Console.WriteLine("Test 4");
+        customerServiceQueue.ServeCustomer();
+        if (customerServiceQueue._queue.Count != 0) {
+            Console.WriteLine($"error: queue._queue.Count is {customerServiceQueue._queue.Count}");
+        }
         // Defect(s) Found: 
 
         Console.WriteLine("=================");
@@ -123,9 +139,9 @@ public class CustomerService {
     /// Dequeue the next customer and display the information.
     /// </summary>
     private void ServeCustomer() {
-        _queue.RemoveAt(0);
         var customer = _queue[0];
         Console.WriteLine(customer);
+        _queue.RemoveAt(0);
     }
 
     /// <summary>
