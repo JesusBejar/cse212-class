@@ -53,7 +53,17 @@ public class CustomerService {
 
         Console.WriteLine("=================");
 
-        // Add more Test Cases As Needed Below
+        // Test 3
+        // Scenario: when queue is full, an error message is displayed
+        // Expected Result: assert the error message is displayed
+        Console.WriteLine("Test 3");
+        if (customerServiceQueue._queue.Count > customerServiceQueue._maxSize) {
+            Console.WriteLine($"error: queue._queue.Count is {customerServiceQueue._queue.Count}");
+        }
+
+        // Defect(s) Found: 
+
+        Console.WriteLine("=================");
     }
 
     private readonly List<Customer> _queue = new();
