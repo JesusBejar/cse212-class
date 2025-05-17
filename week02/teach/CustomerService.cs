@@ -80,6 +80,19 @@ public class CustomerService {
         // Defect(s) Found: 
 
         Console.WriteLine("=================");
+
+        // Test 5
+        // Scenario: when queue is empty, an error message is displayed
+        // Expected Result: assert the error message is displayed
+        Console.WriteLine("Test 5");
+        if (customerServiceQueue._queue.Count <= 0) {
+            Console.WriteLine($"error: queue._queue.Count is {customerServiceQueue._queue.Count}");
+        } else {
+            Console.WriteLine("error: queue is not empty");
+        }
+        // Defect(s) Found: 
+
+        Console.WriteLine("=================");
     }
 
     private readonly List<Customer> _queue = new();
