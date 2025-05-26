@@ -102,8 +102,13 @@ public static class SetsAndMaps
     /// </summary>
     public static bool IsAnagram(string word1, string word2)
     {
-        // TODO Problem 3 - ADD YOUR CODE HERE
-        return false;
+        // eliminate spaces and make lowercase
+        word1 = word1.Replace(" ", "").ToLower();
+        word2 = word2.Replace(" ", "").ToLower();
+        
+        // If lengths are different after cleaning, they can't be anagrams
+
+        return true;
     }
 
     /// <summary>
