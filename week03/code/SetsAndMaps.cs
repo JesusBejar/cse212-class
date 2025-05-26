@@ -69,7 +69,15 @@ public static class SetsAndMaps
             {   
                 // go to index 3
                 string degree = fields[3];
-
+                // out passes currentCount into degrees as value?
+                if (degrees.TryGetValue(degree, out int currentCount))
+                {
+                    degrees[degree] = currentCount + 1;
+                }
+                else
+                {
+                    degrees[degree] = 1;
+                }
             }
         }
 
