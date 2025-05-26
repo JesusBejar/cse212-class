@@ -190,6 +190,15 @@ public static class SetsAndMaps
                 var place = feature.Properties?.Place ?? "Unknown location";
                 var magnitude = feature.Properties?.Mag;
                 
+                // format into string
+                if (magnitude.HasValue)
+                {
+                    earthquakeStrings.Add($"{place} - Mag {magnitude.Value}");
+                }
+                else
+                {
+                    earthquakeStrings.Add($"{place} - Mag Unknown");
+                }
             }
         }
         
