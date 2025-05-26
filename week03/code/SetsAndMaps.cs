@@ -32,7 +32,16 @@ public static class SetsAndMaps
             if (word[0] == word[1])
                 continue;
             
-
+            // reverse pair
+            var reverse = new string(new char[] { word[1], word[0] });
+            // check if reverse is in set
+            if (wordSet.Contains(reverse))
+            {
+                if (string.Compare(word, reverse) < 0)
+                {
+                    pairs.Add($"{word} & {reverse}");
+                }
+            }
         }
         
         return pairs.ToArray();
