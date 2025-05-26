@@ -110,6 +110,34 @@ public static class SetsAndMaps
         if (word1.Length != word2.Length)
             return false;
         
+        // use a dictionary store letter:num objects
+        var letterCounts = new Dictionary<char, int>();
+        
+        // word1 letters & count
+        foreach (char letter in word1)
+        {
+            if (letterCounts.TryGetValue(letter, out int count))
+            {
+                letterCounts[letter] = count + 1;
+            }
+            else
+            {
+                letterCounts[letter] = 1;
+            }
+        }
+        
+        // word2 letters & count
+        foreach (char letter in word2)
+        {
+            if (letterCounts.TryGetValue(letter, out int count))
+            {
+                letterCounts[letter] = count - 1;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         
         return true;
