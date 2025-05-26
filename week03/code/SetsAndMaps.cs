@@ -184,7 +184,13 @@ public static class SetsAndMaps
         
         if (featureCollection.Features != null)
         {
-
+            foreach (var feature in featureCollection.Features)
+            {
+                // pull place and magnitude from the Properties object
+                var place = feature.Properties?.Place ?? "Unknown location";
+                var magnitude = feature.Properties?.Mag;
+                
+            }
         }
         
         return earthquakeStrings.ToArray();
