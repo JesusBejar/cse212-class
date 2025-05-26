@@ -138,7 +138,13 @@ public static class SetsAndMaps
                 return false;
             }
         }
-
+        
+        // check if count is zero (anagram found)
+        foreach (int count in letterCounts.Values)
+        {
+            if (count != 0)
+                return false;
+        }
         
         return true;
     }
