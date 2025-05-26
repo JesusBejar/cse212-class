@@ -64,9 +64,11 @@ public static class SetsAndMaps
         foreach (var line in File.ReadLines(filename))
         {
             var fields = line.Split(",");
-            
+            // go to column 4
             if (fields.Length >= 4)
-            {
+            {   
+                // go to index 3
+                string degree = fields[3];
 
             }
         }
