@@ -26,7 +26,14 @@ public static class SetsAndMaps
         var wordSet = new HashSet<string>(words);
         var pairs = new List<string>();
         
+        foreach (var word in words)
+        {
+            // find double letters
+            if (word[0] == word[1])
+                continue;
+            
 
+        }
         
         return pairs.ToArray();
     }
