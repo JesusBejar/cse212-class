@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Collections.Generic;
 
 public static class SetsAndMaps
 {
@@ -21,8 +22,13 @@ public static class SetsAndMaps
     /// <param name="words">An array of 2-character words (lowercase, no duplicates)</param>
     public static string[] FindPairs(string[] words)
     {
-        // TODO Problem 1 - ADD YOUR CODE HERE
-        return [];
+        // why make a hashset and list?
+        var wordSet = new HashSet<string>(words);
+        var pairs = new List<string>();
+        
+
+        
+        return pairs.ToArray();
     }
 
     /// <summary>
