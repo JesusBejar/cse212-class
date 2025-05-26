@@ -106,11 +106,15 @@ public static class SetsAndMaps
         word1 = word1.Replace(" ", "").ToLower();
         word2 = word2.Replace(" ", "").ToLower();
         
-        // If lengths are different after cleaning, they can't be anagrams
+        // length check
+        if (word1.Length != word2.Length)
+            return false;
+        
 
+        
         return true;
     }
-
+        
     /// <summary>
     /// This function will read JSON (Javascript Object Notation) data from the 
     /// United States Geological Service (USGS) consisting of earthquake data.
