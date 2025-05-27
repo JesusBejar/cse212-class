@@ -13,6 +13,21 @@ public partial class Program
         Console.WriteLine("Hello Sandbox World!");
 
     }
+
+    // Test cases:
+    
+    // 1. Trace.Assert(FindIntersection(list1, list2), "there are no intersections, intersectionNums is empty"); // true
+    // var result = FindIntersection(list1, list2);
+    // Console.WriteLine(result);
+    // 2. Trace.Assert(FindIntersection(list1, list2), "they are all intersections, list1 and list2 are empty"); // true
+    // var result = FindIntersection(list1, list2);
+    // Console.WriteLine(result);
+    // 3. Trace.Assert(FindUnion(list1, list2), "union is complete"); // true
+    // var result = FindIntersection(list1, list2);
+    // Console.WriteLine(result);
+
+
+
     // O(n) because it depends on the size of the set
     static List<int> FindIntersection(List<int> list1, List<int> list2)
     {
