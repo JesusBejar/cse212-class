@@ -32,6 +32,33 @@ public partial class Program
         
         return intersectionNums;
     }
+    // O(2n) because both foreach loops depend on the size of the set
+    static List<int> FindUnion(List<int> list1, List<int> list2)
+    {
+        // true list
+        var union = new List<int>();
+        // check list
+        var seen = new HashSet<int>();
+        // loops not nested
+        foreach (int element in list1)
+        {
+            // adding to hashset to detects then prohibits duplicates, returns true or false based on if it exists in hashset
+            if (seen.Add(element))
+            {
+                union.Add(element);
+            }
+        }
+        
+            foreach (int element in list2)
+        {
+            if (seen.Add(element))
+            {
+                union.Add(element);
+            }
+        }
+        
+        return union;
+    }
 
 }
     
