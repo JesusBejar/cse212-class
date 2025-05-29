@@ -166,7 +166,6 @@ public class LinkedList : IEnumerable<int>
                     current.Next!.Prev = current.Prev;
                 }
             }
-            current = current.Next;
         }
     }
 
