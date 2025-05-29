@@ -138,6 +138,36 @@ public class LinkedList : IEnumerable<int>
     public void Remove(int value)
     {
         // TODO Problem 3
+        var current = _head;
+
+        while (current != null)
+        {
+            if (current.Data == value)
+            {
+                // head
+                if (current == _head)
+                {
+                    // reassign head to the next node
+                    _head = current.Next;
+                }
+                // tail
+                else if (current == _tail)
+                {
+                    // reassign tail to the previous node
+                    _tail = current.Prev;
+                }
+                // middle
+                else
+                {
+                    // this is very confusing
+                    // the node previous to the current with now have the next value of the current node
+                    current.Prev!.Next = current.Next;
+                    // the node after the current with now have the previous value of the current node
+                    current.Next!.Prev = current.Prev;
+                }
+            }
+            current = current.Next;
+        }
     }
 
     /// <summary>
