@@ -47,9 +47,36 @@ public static class Recursion
     /// You can assume that the size specified is always valid (between 1 
     /// and the length of the letters list).
     /// </summary>
+    //
+    // letters = user input
+    // size = user input
+    // word = one result
+    // results = multiples words
     public static void PermutationsChoose(List<string> results, string letters, int size, string word = "")
     {
         // TODO Start Problem 2
+        // base case
+        if (word.Length == size)
+        {
+            // one result is done
+            // add one result
+            results.Add(word);
+            return;
+        }
+        else {
+            // loop through all letters inputed by user
+            for (var i = 0; i < letters.Length; i++)
+            {
+                // declare current letter
+                char currentLetter = letters[i];
+                
+                // declare remaining letters
+                string remainingLetters = letters.Remove(i, 1);
+                
+                // callback 
+                PermutationsChoose(results, remainingLetters, size, word + currentLetter);
+            }
+        }
     }
 
     /// <summary>
