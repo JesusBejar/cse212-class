@@ -35,6 +35,25 @@ public class Node
     public bool Contains(int value)
     {
         // TODO Start Problem 2
+        
+        // base case, value found 
+        if (value == Data)
+            return true;
+        
+        // search left subtree
+        if (value < Data)
+        {
+            // short circuit this bad puppy
+            // null check and callback
+            return Left != null && Left.Contains(value);
+        }
+        
+        // search right subtree
+        if (value > Data)
+        {
+            return Right != null && Right.Contains(value);
+        }
+        
         return false;
     }
 
